@@ -27,11 +27,17 @@ The aim is to transform messy, inconsistent raw data into a clean and reliable d
 - Create an **ER diagram** to represent structure  
 
 ---
-Approach: Company Table Idea
+**Approach** : **Company Table Idea**
 
 As an improvement, I introduced a Company table to store company details, with the Layoffs table referencing it via a foreign key. This reduces data duplication, ensures consistency, and makes it easier to analyze layoffs by company attributes.
 
-## 🖼 ER Diagram
+
+
+----
+**
+ER DIAGRAM **
+
+
 
 
 ```markdown
