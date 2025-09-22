@@ -34,8 +34,9 @@ As an improvement, I introduced a Company table to store company details, with t
 
 
 ----
-**
-ER DIAGRAM **
+
+ ![**ER Diagram**](images/LAYOFFS.ER.png)
+
 
 
 
