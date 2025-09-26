@@ -41,5 +41,39 @@ As an improvement, I introduced a Company table to store company details, with t
 
 
 
-```markdown
 
+
+***CODE FOR REFERENCE***
+<pre>  SELECT * 
+ FROM ( SELECT company, industry, total_laid_off, `date`, 
+ ROW_NUMBER() OVER 
+ ( PARTITION BY company, industry, total_laid_off, `date` ) 
+ AS row_num 
+ FROM world_layoffs.layoffs_staging ) duplicates 
+ WHERE row_num > 1;  </pre>
+ 
+<pre>
+FROM world_layoffs.layoffs_staging2
+ORDER BY industry;
+
+UPDATE layoffs_staging2
+SET industry = 'Crypto'
+WHERE industry IN ('Crypto Currency', 'CryptoCurrency');
+</pre>
+
+<pre>
+ SELECT *
+FROM world_layoffs.layoffs_staging2
+WHERE total_laid_off IS NULL;
+
+
+SELECT *
+FROM world_layoffs.layoffs_staging2
+WHERE total_laid_off IS NULL
+AND percentage_laid_off IS NULL;
+
+*** Delete Useless data we can't really use***
+DELETE FROM world_layoffs.layoffs_staging2
+WHERE total_laid_off IS NULL
+AND percentage_laid_off IS NULL;
+</pre>
